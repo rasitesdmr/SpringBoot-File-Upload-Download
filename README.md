@@ -12,9 +12,9 @@ docker-compose down -v
 
 ## 📌 Postman ?
 
-<img src="https://github.com/rasitesdmr/SpringBoot-File-Update-Download/blob/master/image/str1.png">
-<img src="https://github.com/rasitesdmr/SpringBoot-File-Update-Download/blob/master/image/str2.png">
+<img src="https://github.com/rasitesdmr/SpringBoot-File-Upload-Download/blob/master/image/str1.png">
+<img src="https://github.com/rasitesdmr/SpringBoot-File-Upload-Download/blob/master/image/str2.png">
 
 ## 📌 PostgreSQL ?
 
-<img src="https://github.com/rasitesdmr/SpringBoot-File-Update-Download/blob/master/image/str3.png">
+<img src="https://github.com/rasitesdmr/SpringBoot-File-Upload-Download/blob/master/image/str3.png">
