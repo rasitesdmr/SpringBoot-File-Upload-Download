@@ -1,0 +1,28 @@
+*** ImageData ***
+
+                                                @Lob ?
+
+1-) Açıklama eklenen alanın DataBase'de BLOB (ikili veri) olarak temsil edilmesi gerektiğini belirtir.
+
+2-) Lob'un yaygın kullanımı, DB sütunlarına eşlenmeyen bazı nesne özelliklerini depolamak için Entity'nizin içinde
+bir HashMap alanına açıklama eklemektir. Bu şekilde, eşlenmemiş tüm değerler DB'de ikili gösterimlerinde tek bir
+sütunda saklanabilir.
+
+3-) Lob ek açıklaması, bir Java sınıfındaki bir alanı Büyük Nesne (LOB) olarak işaretlemek için kullanılır. LOB'lar
+metin, görüntü ve ses gibi çok büyük miktarlarda veri depolayabilen büyük veri türleridir. Bir veritabanında, LOB'lar
+genellikle varlık verilerinin geri kalanıyla aynı tabloda değil, ayrı bir tabloda veya veritabanının ayrı bir alanında
+saklanır.
+
+4-) Lombok @Lob ek açıklaması bir alana uygulandığında, alanı veritabanındaki bir LOB ile eşlemek için gerekli kodu
+oluşturur. Bu, JPA veya Hibernate gibi bir Java kalıcılık katmanında LOB'larla çalışırken zaman kazandırabilir ve
+şablon kodunu azaltabilir.
+
+                                @Type(type = "org.hibernate.type.ImageType") ?
+
+1-) Bu, bir veritabanında veri kalıcılığını yönetmek için bir Java kütüphanesi olan Hibernate çerçevesindeki bir ek
+açıklama.
+2-) Type ek açıklaması, bir varlık sınıfındaki bir özelliğin Hibernate türünü belirtmek için kullanılır. Bir özellik
+için varsayılan Hibernate tür eşlemesini geçersiz kılmanıza olanak tanır.
+3-) Bu durumda, @Type ek açıklaması, ek açıklamalı özelliğin türünün bir ImageType olduğunu belirtir. ImageType, bir
+özelliği BLOB (Binary Large OBject) veya BYTEA (PostgreSQL'de bir ikili veri türü) türündeki bir veritabanı sütunuyla
+eşlemek için kullanılabilen özel bir Hibernate türüdür.

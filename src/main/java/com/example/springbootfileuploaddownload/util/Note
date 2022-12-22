@@ -1,0 +1,34 @@
+*** ImageUtils ***
+
+                                            Deflater ?
+
+1-) Sağladığınız kod, bir bayt dizisini sıkıştırmak için Java Standart Kütüphanesi'ndeki Deflater sınıfını kullanıyor.
+
+2-) Deflater sınıfı java.util.zip paketinin bir parçasıdır ve Deflate algoritmasını kullanarak verileri sıkıştırmak
+için bir araç sağlar. Deflate algoritması, ZIP, gzip ve PNG gibi birçok farklı dosya biçiminde kullanılan ve yaygın
+olarak kullanılan kayıpsız bir veri sıkıştırma algoritmasıdır.
+
+3-) Sağladığınız kodda, Deflater() yapıcısı kullanılarak yeni bir Deflater nesnesi oluşturulur. Daha sonra setLevel()
+yöntemi, sıkıştırma düzeyini BEST_COMPRESSION olarak ayarlamak için kullanılır; bu, mümkün olan en yüksek sıkıştırma
+düzeyini elde etmeye çalışacaktır.
+
+4-) Ardından, setInput() yöntemi Deflater'a sıkıştırılacak verileri sağlamak için kullanılır. Tüm verilerin
+sağlandığını ve Deflater'ın sıkıştırma işlemini gerçekleştirmesi gerektiğini belirtmek için finish() yöntemi çağrılır.
+
+5-) ByteArrayOutputStream sınıfı, bellekteki bir bayt dizisine veri yazmanıza olanak tanıyan OutputStream'in bir alt
+sınıfıdır. Veriler bir tamponda saklanır ve daha fazla veri yazıldıkça tampon otomatik olarak büyür. toByteArray()
+yöntemi, verileri tampondan bir bayt dizisi olarak almak için kullanılabilir.
+
+6-) Sağladığınız kodda, belirtilen bir başlangıç boyutuyla yeni bir ByteArrayOutputStream nesnesi oluşturulur.
+Bu boyut, yapıcıya argüman olarak aktarılan sıkıştırılacak verinin uzunluğuna ayarlanır.
+
+7-) Ardından, 4KB boyutunda bir bayt dizisi olarak geçici bir tampon tmp oluşturulur. Daha sonra Deflater'ın deflate()
+yöntemi, finished() yöntemi true değerini döndürerek Deflater'ın verileri sıkıştırmayı bitirdiğini gösterene kadar bir
+döngü içinde çağrılır.
+
+8-) Döngünün her yinelemesinde, deflate() yöntemi sıkıştırılmış verileri tmp tamponuna yazar. ByteArrayOutputStream'in
+write() yöntemi daha sonra tmp tamponunun içeriğini çıkış akışına yazmak için çağrılır. Size argümanı, tmp tamponundan
+kaç baytın çıkış akışına yazılması gerektiğini belirtir.
+
+9-) Bu işlem, Deflater verileri sıkıştırmayı bitirene kadar devam eder, bu noktada döngüden çıkılır ve
+ByteArrayOutputStream sıkıştırılmış verileri içerir
